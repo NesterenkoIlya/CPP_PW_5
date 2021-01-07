@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Get Sonata</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- See configuration in WebMvConfig.java -->
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+
+    <script th:src="@{/jquery/jquery.min.js}"></script>
+    <script th:src="@{/popper/popper.min.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+
+    <style>
+        body {
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<h2>Show Sonata</h2>
+
+
+<!--    <div th:if="${errorMessage!=null}"
+        style="color:red;font-style:italic" th:utext="${errorMessage}">..</div> -->
+
+<form th:action="@{/sonataById}" th:object="${getSonataForm}" method="POST">
+    <div class="form-group">
+        <label for="sonata_id">Sonata_id:</label>
+        <input type="number"	class="form-control"  placeholder="Enter sonata_id" th:field="*{sonata_id}" />
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Show"/>
+
+</form>
+
+</body>
+</html>

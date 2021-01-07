@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sonata</title>
+
+    <meta charset="UTF-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- See configuration in WebMvConfig.java -->
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+    <style>
+    th, td {
+        padding: 5px;
+    }
+    </style>
+
+</head>
+
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<div class="container">
+    <h2>Sonata</h2>
+
+    <table  class="table table-hover">
+        <tr>
+            <th>sonata_id</th>
+            <th>duration</th>
+            <th>opuses_number</th>
+            <th>compositor</th>
+            <th>part_number</th>
+            <th>application</th>
+            <th>cell_id</th>
+        </tr>
+        <tr th:each="sonataInfo : ${allSonata}">
+            <td th:utext="${sonataInfo.sonata_id}">..</td>
+            <td th:utext="${sonataInfo.duration}">..</td>
+            <td th:utext="${sonataInfo.opuses_number}">..</td>
+            <td th:utext="${sonataInfo.compositor}">..</td>
+            <td th:utext="${sonataInfo.part_number}">..</td>
+            <td th:utext="${sonataInfo.application}">..</td>
+            <td th:utext="${sonataInfo.cell_id}">..</td>
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>
