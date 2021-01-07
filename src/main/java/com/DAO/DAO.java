@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class DAO implements IDAO {
     private static final String url = "jdbc:mysql://localhost:3306/musical_composition?useUnicode=true&serverTimezone=UTC";
     private static final String user = "root";
-    private static final String password = "guvelu12";
+    private static final String password = "";
     private Connection connection;
     private Scanner in = new Scanner(System.in);
 
