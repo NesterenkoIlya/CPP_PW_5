@@ -6,6 +6,6 @@ public class DeleteCellForm {
     public DeleteCellForm() {}
     public DeleteCellForm(int id) { this.cell_id = id; }
 
-    public int get_cell_id() { return cell_id; }
-    public void set_cell_id(int id) { this.cell_id = id; }
+    public int getCell_id() { return cell_id; }
+    public void setCell_id(int id) { this.cell_id = id; }
 }

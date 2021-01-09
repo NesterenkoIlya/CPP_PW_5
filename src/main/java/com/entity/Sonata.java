@@ -28,19 +28,19 @@ public class Sonata extends MusicalComposition {
                 '}';
     }
 
-    public void set_part_number(int part_number) { this.part_number = part_number; }
+    public void setPart_number(int part_number) { this.part_number = part_number; }
 
-    public void set_application(String application) { this.application = application; }
+    public void setApplication(String application) { this.application = application; }
 
-    public void set_sonata_id(int sonata_id) { this.sonata_id = sonata_id; }
+    public void setSonata_id(int sonata_id) { this.sonata_id = sonata_id; }
 
-    public void set_cell_id(int cell_id) { this.cell_id = cell_id; }
+    public void setCell_id(int cell_id) { this.cell_id = cell_id; }
 
-    public int get_part_number() { return part_number; }
+    public int getPart_number() { return part_number; }
 
-    public String get_application() { return application; }
+    public String getApplication() { return application; }
 
-    public int get_sonata_id() { return sonata_id; }
+    public int getSonata_id() { return sonata_id; }
 
-    public int get_cell_id() { return cell_id; }
+    public int getCell_id() { return cell_id; }
 }

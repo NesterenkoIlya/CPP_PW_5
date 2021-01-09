@@ -50,23 +50,23 @@ public class Aria extends Song {
                 '}';
     }
 
-    public void set_volume(String volume) { this.volume = volume; }
+    public void setVolume(String volume) { this.volume = volume; }
 
-    public void set_pace(String pace) { this.pace = pace; }
+    public void setPace(String pace) { this.pace = pace; }
 
-    public void set_intonation(String intonation) { this.intonation = intonation; }
+    public void setIntonation(String intonation) { this.intonation = intonation; }
 
-    public void set_aria_id(int aria_id) { this.aria_id = aria_id; }
+    public void setAria_id(int aria_id) { this.aria_id = aria_id; }
 
-    public void set_cell_id(int cell_id) { this.cell_id = cell_id; }
+    public void setCell_id(int cell_id) { this.cell_id = cell_id; }
 
-    public String get_volume() { return volume; }
+    public String getVolume() { return volume; }
 
-    public String get_pace() { return pace; }
+    public String getPace() { return pace; }
 
-    public String get_intonation() { return intonation; }
+    public String getIntonation() { return intonation; }
 
-    public int get_aria_id() { return aria_id; }
+    public int getAria_id() { return aria_id; }
 
-    public int get_cell_id() { return cell_id; }
+    public int getCell_id() { return cell_id; }
 }

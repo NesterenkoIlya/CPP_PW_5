@@ -28,15 +28,15 @@ public class Song extends MusicalComposition {
                 '}';
     }
 
-    public void set_song_kind(String song_kind) { this.song_kind = song_kind; }
+    public void setSong_kind(String song_kind) { this.song_kind = song_kind; }
 
-    public void set_singer(String singer) { this.singer = singer; }
+    public void setSinger(String singer) { this.singer = singer; }
 
-    public void set_verses_number(int verses_number) { this.verses_number = verses_number; }
+    public void setVerses_number(int verses_number) { this.verses_number = verses_number; }
 
-    public String get_song_kind() { return song_kind; }
+    public String getSong_kind() { return song_kind; }
 
-    public String get_singer() { return singer; }
+    public String getSinger() { return singer; }
 
-    public int get_verses_number() { return verses_number; }
+    public int getVerses_number() { return verses_number; }
 }

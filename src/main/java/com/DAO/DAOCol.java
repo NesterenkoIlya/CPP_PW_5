@@ -3,17 +3,15 @@ package com.DAO;
 import com.entity.*;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 public class DAOCol implements IDAO {
-    private static LinkedList<Aria> _aria = new LinkedList<Aria>();
-    private static LinkedList<Cell> _cell = new LinkedList<Cell>();
-    private static LinkedList<Collection> _collection = new LinkedList<Collection>();
-    private static LinkedList<Sonata> _sonata = new LinkedList<Sonata>();
-    private Scanner in = new Scanner(System.in);
+    private static final LinkedList<Aria> _aria = new LinkedList<>();
+    private static final LinkedList<Cell> _cell = new LinkedList<>();
+    private static final LinkedList<Collection> _collection = new LinkedList<>();
+    private static final LinkedList<Sonata> _sonata = new LinkedList<>();
+    private final Scanner in = new Scanner(System.in);
 
     static {
             _collection.add(new Collection(1, "Big Collection"));
@@ -53,30 +51,22 @@ public class DAOCol implements IDAO {
 
     @Override
     public void delete_collection(int id) {
-        for (Collection o : _collection)
-            if (o.get_collection_id() == id)
-                _collection.remove(o);
+        _collection.removeIf(o -> o.getCollection_id() == id);
     }
 
     @Override
     public void delete_cell(int id) {
-        for (Cell o : _cell)
-            if (o.get_cell_id() == id)
-                _cell.remove(o);
+        _cell.removeIf(o -> o.getCell_id() == id);
     }
 
     @Override
     public void delete_aria(int id) {
-        for (Aria o : _aria)
-            if (o.get_aria_id() == id)
-                _aria.remove(o);
+        _aria.removeIf(o -> o.getAria_id() == id);
     }
 
     @Override
     public void delete_sonata(int id) {
-        for (Sonata o : _sonata)
-            if (o.get_sonata_id() == id)
-                _sonata.remove(o);
+        _sonata.removeIf(o -> o.getSonata_id() == id);
     }
 
     @Override
@@ -86,7 +76,7 @@ public class DAOCol implements IDAO {
         Collection c = new Collection(id, name);
         int i = 0;
         for (Collection o : _collection) {
-            if (o.get_collection_id() == id)
+            if (o.getCollection_id() == id)
                 break;
             i++;
         }
@@ -102,7 +92,7 @@ public class DAOCol implements IDAO {
         int i = 0;
         Cell c = new Cell(id, c_n, c_i);
         for (Cell o : _cell) {
-            if (o.get_cell_id() == id)
+            if (o.getCell_id() == id)
                 break;
             i++;
         }
@@ -113,10 +103,12 @@ public class DAOCol implements IDAO {
     public void update_aria(int id) {
         System.out.print("Enter duration:"); double dur = in.nextDouble();
         System.out.print("Enter opuses_number:"); int on = in.nextInt();
+        in.nextLine();
         System.out.print("Enter compositor:"); String comp = in.nextLine();
         System.out.print("Enter song_kind:"); String sk = in.nextLine();
         System.out.print("Enter singer:"); String sin = in.nextLine();
         System.out.print("Enter verses_number:"); int vn = in.nextInt();
+        in.nextLine();
         System.out.print("Enter volume:"); String vol = in.nextLine();
         System.out.print("Enter pace:"); String p = in.nextLine();
         System.out.print("Enter intonation:"); String inton = in.nextLine();
@@ -125,7 +117,7 @@ public class DAOCol implements IDAO {
         int i = 0;
         Aria a = new Aria(id, dur, on, comp, sk, sin, vn, vol, p, inton, cid);
         for (Aria o : _aria) {
-            if (o.get_aria_id() == id)
+            if (o.getAria_id() == id)
                 break;
             i++;
         }
@@ -136,15 +128,17 @@ public class DAOCol implements IDAO {
     public void update_sonata(int id) {
         System.out.print("Enter duration:"); double dur = in.nextDouble();
         System.out.print("Enter opuses_number:"); int on = in.nextInt();
+        in.nextLine();
         System.out.print("Enter compositor:"); String comp = in.nextLine();
         System.out.print("Enter part_number:"); int pn = in.nextInt();
+        in.nextLine();
         System.out.print("Enter application:"); String appl = in.nextLine();
         System.out.print("Enter cell_id:"); int cid = in.nextInt();
 
         int i = 0;
         Sonata s = new Sonata(id, dur, on, comp, pn, appl, cid);
         for (Sonata o : _sonata) {
-            if (o.get_sonata_id() == id)
+            if (o.getSonata_id() == id)
                 break;
             i++;
         }
@@ -153,27 +147,27 @@ public class DAOCol implements IDAO {
 
     @Override
     public LinkedList<Collection> search_collection(int id) {
-        LinkedList<Collection> list = null;
+        LinkedList<Collection> list = new LinkedList<>();
         for (Collection o : _collection)
-            if (o.get_collection_id() == id)
+            if (o.getCollection_id() == id)
                 list.add(o);
         return list;
     }
 
     @Override
     public LinkedList<Cell> search_cell(int id) {
-        LinkedList<Cell> list = null;
+        LinkedList<Cell> list = new LinkedList<>();
         for (Cell o : _cell)
-            if (o.get_cell_id() == id)
+            if (o.getCell_id() == id)
                 list.add(o);
         return list;
     }
 
     @Override
     public LinkedList<Aria> search_aria(int id) {
-        LinkedList<Aria> list = null;
+        LinkedList<Aria> list = new LinkedList<>();
         for (Aria o : _aria)
-            if (o.get_aria_id() == id)
+            if (o.getAria_id() == id)
                 list.add(o);
         return list;
     }
@@ -182,7 +176,7 @@ public class DAOCol implements IDAO {
     public LinkedList<Sonata> search_sonata(int id) {
         LinkedList<Sonata> list = new LinkedList<>();
         for (Sonata o : _sonata)
-            if (o.get_sonata_id() == id)
+            if (o.getSonata_id() == id)
                 list.add(o);
         return list;
     }

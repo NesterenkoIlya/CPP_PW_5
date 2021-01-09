@@ -1,18 +1,16 @@
 package com.DAO;
 
 import com.entity.*;
-
 import java.sql.*;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 public class DAO implements IDAO {
     private static final String url = "jdbc:mysql://localhost:3306/musical_composition?useUnicode=true&serverTimezone=UTC";
     private static final String user = "root";
-    private static final String password = "";
+    private static final String password = "guvelu12";
     private Connection connection;
-    private Scanner in = new Scanner(System.in);
+    final private Scanner in = new Scanner(System.in);
 
     public DAO() {
         try {
@@ -25,10 +23,10 @@ public class DAO implements IDAO {
     @Override
     public void add_collection(Collection collection) {
         try {
-            PreparedStatement add = null;
+            PreparedStatement add;
             add = connection.prepareStatement("insert into collection(collection_id, name) values(?, ?)");
-            add.setInt(1, collection.get_collection_id());
-            add.setString(2, collection.get_name());
+            add.setInt(1, collection.getCollection_id());
+            add.setString(2, collection.getName());
             add.executeUpdate();
             add.close();
         } catch (SQLException throwables) {
@@ -41,9 +39,9 @@ public class DAO implements IDAO {
     public void add_cell(Cell cell) {
         try {
             PreparedStatement add = connection.prepareStatement("insert into cell(cell_id, copies_number, collection_id) values(?, ?, ?)");
-            add.setInt(1, cell.get_cell_id());
-            add.setInt(2, cell.get_copies_number());
-            add.setInt(3, cell.get_collection_id());
+            add.setInt(1, cell.getCell_id());
+            add.setInt(2, cell.getCopies_number());
+            add.setInt(3, cell.getCollection_id());
             add.executeUpdate();
             add.close();
         } catch (SQLException throwables) {
@@ -55,17 +53,17 @@ public class DAO implements IDAO {
     public void add_aria(Aria aria) {
         try {
             PreparedStatement add = connection.prepareStatement("insert into aria(aria_id, duration, opuses_number, compositor, song_kind, singer, verses_number, volume, pace, intonation, cell_id) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            add.setInt(1, aria.get_aria_id());
-            add.setDouble(2, aria.get_duration());
-            add.setInt(3, aria.get_opuses_number());
-            add.setString(4, aria.get_compositor());
-            add.setString(5, aria.get_song_kind());
-            add.setString(6, aria.get_singer());
-            add.setInt(7, aria.get_verses_number());
-            add.setString(8, aria.get_volume());
-            add.setString(9, aria.get_pace());
-            add.setString(10, aria.get_intonation());
-            add.setInt(11, aria.get_cell_id());
+            add.setInt(1, aria.getAria_id());
+            add.setDouble(2, aria.getDuration());
+            add.setInt(3, aria.getOpuses_number());
+            add.setString(4, aria.getCompositor());
+            add.setString(5, aria.getSong_kind());
+            add.setString(6, aria.getSinger());
+            add.setInt(7, aria.getVerses_number());
+            add.setString(8, aria.getVolume());
+            add.setString(9, aria.getPace());
+            add.setString(10, aria.getIntonation());
+            add.setInt(11, aria.getCell_id());
             add.executeUpdate();
             add.close();
         } catch (SQLException throwables) {
@@ -77,13 +75,13 @@ public class DAO implements IDAO {
     public void add_sonata(Sonata sonata) {
         try {
             PreparedStatement add = connection.prepareStatement("insert into sonata(sonata_id, duration, opuses_number, compositor, part_number, application, cell_id) values(?, ?, ?, ?, ?, ?, ?)");
-            add.setInt(1, sonata.get_sonata_id());
-            add.setDouble(2, sonata.get_duration());
-            add.setInt(3, sonata.get_opuses_number());
-            add.setString(4, sonata.get_compositor());
-            add.setInt(5, sonata.get_part_number());
-            add.setString(6, sonata.get_application());
-            add.setInt(7, sonata.get_cell_id());
+            add.setInt(1, sonata.getSonata_id());
+            add.setDouble(2, sonata.getDuration());
+            add.setInt(3, sonata.getOpuses_number());
+            add.setString(4, sonata.getCompositor());
+            add.setInt(5, sonata.getPart_number());
+            add.setString(6, sonata.getApplication());
+            add.setInt(7, sonata.getCell_id());
             add.executeUpdate();
             add.close();
         } catch (SQLException throwables) {
@@ -373,7 +371,7 @@ public class DAO implements IDAO {
 
     @Override
     public LinkedList<Collection> search_collection(int id) {
-        LinkedList<Collection> list = null;
+        LinkedList<Collection> list = new LinkedList<>();
         try {
             PreparedStatement search;
             ResultSet rs;
@@ -400,7 +398,7 @@ public class DAO implements IDAO {
 
     @Override
     public LinkedList<Cell> search_cell(int id) {
-        LinkedList<Cell> list = null;
+        LinkedList<Cell> list = new LinkedList<>();
         try {
             PreparedStatement search;
             ResultSet rs;
@@ -427,7 +425,7 @@ public class DAO implements IDAO {
 
     @Override
     public LinkedList<Aria> search_aria(int id) {
-        LinkedList<Aria> list = null;
+        LinkedList<Aria> list = new LinkedList<>();
         try {
             PreparedStatement search;
             ResultSet rs;
@@ -463,7 +461,7 @@ public class DAO implements IDAO {
 
     @Override
     public LinkedList<Sonata> search_sonata(int id) {
-        LinkedList<Sonata> list = null;
+        LinkedList<Sonata> list = new LinkedList<>();
         try {
             PreparedStatement search;
             ResultSet rs;
@@ -495,7 +493,7 @@ public class DAO implements IDAO {
 
     @Override
     public LinkedList<Collection> get_collection() {
-        LinkedList<Collection> list = null;
+        LinkedList<Collection> list = new LinkedList<>();
         try {
             PreparedStatement get = connection.prepareStatement("select * from collection");
 
@@ -515,7 +513,7 @@ public class DAO implements IDAO {
 
     @Override
     public LinkedList<Cell> get_cell() {
-        LinkedList<Cell> list = null;
+        LinkedList<Cell> list = new LinkedList<>();
         try {
             PreparedStatement get = connection.prepareStatement("select * from cell");
 
@@ -536,7 +534,7 @@ public class DAO implements IDAO {
 
     @Override
     public LinkedList<Aria> get_aria() {
-        LinkedList<Aria> list = null;
+        LinkedList<Aria> list = new LinkedList<>();
         try {
             PreparedStatement get = connection.prepareStatement("select * from aria");
 
@@ -565,7 +563,7 @@ public class DAO implements IDAO {
 
     @Override
     public LinkedList<Sonata> get_sonata() {
-        LinkedList<Sonata> list = null;
+        LinkedList<Sonata> list = new LinkedList<>();
         try {
             PreparedStatement get = connection.prepareStatement("select * from sonata");
 

@@ -6,6 +6,6 @@ public class GetAriaForm {
     public GetAriaForm() {}
     public GetAriaForm(int id) { this.aria_id = id; }
 
-    public int get_aria_id() { return aria_id; }
-    public void set_aria_id(int id) { this.aria_id = id; }
+    public int getAria_id() { return aria_id; }
+    public void setAria_id(int id) { this.aria_id = id; }
 }

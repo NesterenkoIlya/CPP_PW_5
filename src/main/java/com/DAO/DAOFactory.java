@@ -1,7 +1,5 @@
 package com.DAO;
 
-import com.DAO.IDAO;
-import com.DAO.TypeDAO;
 import java.sql.*;
 
 public class DAOFactory {

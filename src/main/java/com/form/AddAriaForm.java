@@ -30,49 +30,49 @@ public class AddAriaForm {
     }
 
     //set
-    public void set_aria_id(int id) { this.aria_id = id; }
+    public void setAria_id(int id) { this.aria_id = id; }
 
-    public void set_duration(double duration) { this.duration = duration; }
+    public void setDuration(double duration) { this.duration = duration; }
 
-    public void set_compositor(String compositor) { this.compositor = compositor; }
+    public void setCompositor(String compositor) { this.compositor = compositor; }
 
-    public void set_opuses_number(int opuses_number) { this.opuses_number = opuses_number; }
+    public void setOpuses_number(int opuses_number) { this.opuses_number = opuses_number; }
 
-    public void set_song_kind(String song_kind) { this.song_kind = song_kind; }
+    public void setSong_kind(String song_kind) { this.song_kind = song_kind; }
 
-    public void set_singer(String singer) { this.singer = singer; }
+    public void setSinger(String singer) { this.singer = singer; }
 
-    public void set_verses_number(int verses_number) { this.verses_number = verses_number; }
+    public void setVerses_number(int verses_number) { this.verses_number = verses_number; }
 
-    public void set_volume(String volume) { this.volume = volume; }
+    public void setVolume(String volume) { this.volume = volume; }
 
-    public void set_pace(String pace) { this.pace = pace; }
+    public void setPace(String pace) { this.pace = pace; }
 
-    public void set_intonation(String intonation) { this.intonation = intonation; }
+    public void setIntonation(String intonation) { this.intonation = intonation; }
 
-    public void set_cell_id(int cell_id) { this.cell_id = cell_id; }
+    public void setCell_id(int cell_id) { this.cell_id = cell_id; }
 
     //get
-    public int get_aria_id() { return aria_id; }
+    public int getAria_id() { return aria_id; }
 
-    public double get_duration() { return duration; }
+    public double getDuration() { return duration; }
 
-    public int get_opuses_number() { return opuses_number; }
+    public int getOpuses_number() { return opuses_number; }
 
-    public String get_compositor() { return compositor; }
+    public String getCompositor() { return compositor; }
 
-    public String get_song_kind() { return song_kind; }
+    public String getSong_kind() { return song_kind; }
 
-    public String get_singer() { return singer; }
+    public String getSinger() { return singer; }
 
-    public int get_verses_number() { return verses_number; }
+    public int getVerses_number() { return verses_number; }
 
-    public String get_volume() { return volume; }
+    public String getVolume() { return volume; }
 
-    public String get_pace() { return pace; }
+    public String getPace() { return pace; }
 
-    public String get_intonation() { return intonation; }
+    public String getIntonation() { return intonation; }
 
-    public int get_cell_id() { return cell_id; }
+    public int getCell_id() { return cell_id; }
 
 }

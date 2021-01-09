@@ -1,6 +1,6 @@
 package com.entity;
 
-public class MusicalComposition implements Comparable<MusicalComposition> {
+public class MusicalComposition {
     public double duration;    //Длительность
     public int opuses_number;  //Номер опуса
     public String compositor;  //Коипозитор
@@ -21,20 +21,15 @@ public class MusicalComposition implements Comparable<MusicalComposition> {
                 '}';
     }
 
-    public double get_duration() { return duration; }
+    public double getDuration() { return duration; }
 
-    public int get_opuses_number() { return opuses_number; }
+    public int getOpuses_number() { return opuses_number; }
 
-    public String get_compositor() { return compositor; }
+    public String getCompositor() { return compositor; }
 
-    public void set_duration(double duration) { this.duration = duration; }
+    public void setDuration(double duration) { this.duration = duration; }
 
-    public void set_compositor(String compositor) { this.compositor = compositor; }
+    public void setCompositor(String compositor) { this.compositor = compositor; }
 
-    public void set_opuses_number(int opuses_number) { this.opuses_number = opuses_number; }
-
-    public int compareTo(MusicalComposition obj) {
-        double other_duration = obj.get_duration();
-        return Double.compare(duration, other_duration);
-    }
+    public void setOpuses_number(int opuses_number) { this.opuses_number = opuses_number; }
 }
